@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartIcon from "../CartIcono/index";
+import CartIcon from "../CartIcono/CartIcon";
 import { Images } from "../../utiles/Utiles";
 
 import "./index.scss";
@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <Link className="navbar-brand" to="/">
-        <img src={Images.Logo} alt="" />
+        <img src="./assets/img/logo.jpeg" alt="" />
       </Link>
       <div className="icon navbar-nav ">
         <li>

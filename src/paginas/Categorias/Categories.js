@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../../componentes/Itemdetail/index";
-import Loading from "../../componentes/Carga/index";
+import ItemDetail from "../../componentes/ItemDetail/ItemDetail";
+import Loading from "../../componentes/Carga/Loading";
 import { getFirestore } from "../../firebase/fireBase";
 
 import "./index.scss";

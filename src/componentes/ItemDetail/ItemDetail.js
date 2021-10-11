@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import ItemCount from "../ItemCounter/index";
-import Item from "../Item/index";
+import ItemCount from "../ItemCounter/ItemCount";
+import Item from "../Item/Item";
 import CartContext from "../../contexts/cartContext";
 
 import "./index.scss";

@@ -31,13 +31,13 @@ const Slider = () => {
     <div>
       <Carousel breakPoints={breakPoints}>
         <Item>
-          <img src={Images.Slider01} alt="" className="carousel-image" />
+          <img src="./assets/img/honey.jpeg" alt="" className="carousel-image" />
         </Item>
         <Item>
-          <img src={Images.Slider02} alt="" className="carousel-image" />
+          <img src="./assets/img/honey.jpeg" alt="" className="carousel-image" />
         </Item>
         <Item>
-          <img src={Images.Slider03} alt="" className="carousel-image" />
+          <img src="./assets/img/honey.jpeg" alt="" className="carousel-image" />
         </Item>
       </Carousel>
     </div>

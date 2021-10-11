@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-import ItemCount from "../../componentes/ItemCounter/index";
-import Loading from "../../componentes/Carga/index";
+import ItemCount from "../../componentes/ItemCounter/ItemCount";
+import Loading from "../../componentes/Carga/Loading";
 import CartContext from "../../contexts/cartContext";
 import { getFirestore } from "../../firebase/fireBase";
 

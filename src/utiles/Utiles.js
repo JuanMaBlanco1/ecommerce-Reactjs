@@ -1,4 +1,4 @@
-import Cerveza from "../images/brut ipa.jpeg";
+/* import Cerveza from "../images/brut ipa.jpeg";
 import Cerveza1 from "../images/brut ipa.jpeg";
 import Cerveza2 from "../images/brut ipa.jpeg";
 import Cerveza3 from "../images/brut ipa.jpeg";
@@ -18,4 +18,4 @@ export const Images = {
   Cerveza6,
   Logo,
 
-};
+}; */

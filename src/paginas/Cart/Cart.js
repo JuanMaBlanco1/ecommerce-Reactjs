@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Table from "../../componentes/Table/index";
-import Checkout from "../../componentes/Checkout/index";
+import Table from "../../componentes/Table/Table";
+import Checkout from "../../componentes/Checkout/Checkout";
 import CartContext from "../../contexts/cartContext";
 
 import "./index.scss";

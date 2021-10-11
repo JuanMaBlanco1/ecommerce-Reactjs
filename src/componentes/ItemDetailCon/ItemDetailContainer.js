@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ItemDetail from "../Itemdetail/index";
-import Loading from "../Carga/index";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Loading from "../Carga/Loading";
 
 const ItemDetailContainer = ({ product, onAdd }) => {
   const [article, setArticle] = useState();

@@ -2,8 +2,6 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import CartContext from "../../contexts/cartContext";
 import { getFirestore } from "../../firebase/fireBase";
-import firebase from "firebase/app";
-import "firebase/firestore";
 
 function Field({
   name,
@@ -66,7 +64,7 @@ const Form = () => {
   const updateDataFirebase = async () => {
     const db = getFirestore();
     const itemsToUpdate = db.collection("items").where(
-      firebase.firestore.FieldPath.documentId(),
+     
       "in",
       cart.map((i) => i.id)
     );
@@ -114,7 +112,7 @@ const Form = () => {
     const newOrder = {
       userInfo,
       items,
-      date: firebase.firestore.Timestamp.fromDate(new Date()),
+      
       total: totalPrice,
     };
 

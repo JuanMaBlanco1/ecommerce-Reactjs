@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ItemDetailContainer from "../ItemDetailCon/index";
-import Loading from "../Carga/index";
+import ItemDetailContainer from "../ItemDetailCon/ItemDetailContainer";
+import Loading from "../Carga/Loading";
 import { getFirestore } from "../../firebase/fireBase";
 import { Link } from "react-router-dom";
 
