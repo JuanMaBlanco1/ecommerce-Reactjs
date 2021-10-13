@@ -44,9 +44,9 @@ const ItemList = ({ onAdd }) => {
         <div className="list-container__details">
           <div className="list-container__details-categories">
             <h2>Categorías</h2>
-            <Link to="/categories/futbol">Fútbol</Link>
-            <Link to="/categories/natacion">Natación</Link>
-            <Link to="/categories/basket">Basket</Link>
+            <Link to="/categories/futbol">Cervezas</Link>
+            <Link to="/categories/natacion">Vinos</Link>
+            <Link to="/categories/basket">GIN</Link>
           </div>
           <div className="list-container__details-title">
             <h3>Productos</h3>
