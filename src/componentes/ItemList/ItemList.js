@@ -9,11 +9,12 @@ import "./index.scss";
 const ItemList = ({ onAdd }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  
 
   useEffect(() => {
     setLoading(true);
     const db = getFirestore();
-    const itemCollection = db.collection("items");
+    const itemCollection = db.collection("productos");
 
     itemCollection
       .get()

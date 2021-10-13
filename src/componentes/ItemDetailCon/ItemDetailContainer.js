@@ -6,6 +6,7 @@ const ItemDetailContainer = ({ product, onAdd }) => {
   const [article, setArticle] = useState();
   const [loading, setLoading] = useState(true);
   
+  
 
   const getProduct = () => {
     return new Promise((res) => {

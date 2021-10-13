@@ -5,15 +5,18 @@ import AddIcon from "@material-ui/icons/Add";
 import "./index.scss";
 
 const ItemCount = ({ initial, min, max, setQuantity }) => {
-  const [counter, setCounter] = useState(initial);
-
-  const handleIncrement = () => {
-    counter < max ? setCounter(counter + 6) : console.log("Máximo alcanzado");
+  const [counter, setCounter] = React.useState(0);
+  console.log(counter)
+  const handleSumar = () => {
+    
+    setCounter((prevState) => prevState + 1);
+   
   };
-
-  const handleDecrement = () => {
-    counter > min ? setCounter(counter - 6) : console.log("Mínimo alcanzado");
-  };
+  const handleRestar = () => {
+    if (counter > 0) { 
+    setCounter((prevState) => prevState - 1);  }
+    
+  }
 
   useEffect(() => {
     setQuantity(counter);
@@ -25,14 +28,14 @@ const ItemCount = ({ initial, min, max, setQuantity }) => {
         <div className="counter__content-controls">
           <span
             className="counter__content-controls-subtract"
-            onClick={handleDecrement}
+            onClick={handleRestar}
           >
             <RemoveIcon />
           </span>
           <span className="counter__content-controls-value"> {counter} </span>
           <span
             className="counter__content-controls-add"
-            onClick={handleIncrement}
+            onClick={handleSumar}
           >
             <AddIcon />
           </span>

@@ -10,7 +10,7 @@ const Home = ({ greeting, onAdd }) => {
     <main className="home">
       <div className="home__title">
         <h1>{greeting}</h1>
-        <img src="./assets/img/honey.jpeg"/>
+        
       </div>
       <Slider />
       <ItemList onAdd={onAdd} />
