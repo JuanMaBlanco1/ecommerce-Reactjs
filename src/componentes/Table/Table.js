@@ -29,16 +29,18 @@ const Table = () => {
             <th scope="col">Artículo</th>
             <th scope="col">Precio</th>
             <th scope="col">Total</th>
-            <th scope="col"></th>
+            <th scope="col">Borrar</th>
           </tr>
         </thead>
         <tbody>
           {cart.map((item, index) => (
             <tr key={index}>
               <th scope="row">{item.quantity}</th>
-              <td>{item.name}</td>
-              <td>${item.price}</td>
-              <td>${item.quantity * item.price}</td>
+
+              <td>{item.nombre}</td>
+             
+              <td>${item.precio}</td>
+              <td>${item.quantity * item.precio}</td>
               <td>
                 <button
                   className="btn btn-danger"
@@ -54,5 +56,6 @@ const Table = () => {
     </div>
   );
 };
+
 
 export default Table;

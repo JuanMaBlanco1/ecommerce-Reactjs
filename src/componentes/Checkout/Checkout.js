@@ -12,7 +12,7 @@ const Checkout = () => {
     if (cart.length > 0) {
       setTotalPrice(
         cart
-          .map((product) => product.price * product.quantity)
+          .map((product) => product.precio * product.quantity)
           .reduce((total, valor) => total + valor)
       );
     }

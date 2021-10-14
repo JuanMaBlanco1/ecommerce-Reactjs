@@ -35,16 +35,16 @@ const ItemDetail = ({ product }) => {
     article.quantity = quantity;
 
     const prod = {
-      id: article.id,
-      name: article.name,
+      
+      nombre: article.nombre,
       description: article.description,
       stock: article.stock,
-      price: article.price,
-      brand: article.brand,
-      model: article.model,
+      precio: article.precio,
+      
+      
       quantity: article.quantity,
-      gender: article.gender,
-      image: article.image,
+      
+      imagen: article.imagen,
     };
 
     setCart((value) => [...value, prod]);

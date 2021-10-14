@@ -17,7 +17,7 @@ const ItemDetailPage = ({ onAdd }) => {
   useEffect(() => {
     let isSubscribed = true;
     const db = getFirestore();
-    const itemCollection = db.collection("items");
+    const itemCollection = db.collection("item");
     const item = itemCollection.doc(id);
 
     item
@@ -54,15 +54,15 @@ const ItemDetailPage = ({ onAdd }) => {
 
     const prod = {
       id: article.id,
-      name: article.name,
+      nombre: article.nombre,
       description: article.description,
       stock: article.stock,
-      price: article.price,
+      precio: article.precio,
       brand: article.brand,
       model: article.model,
       quantity: article.quantity,
       gender: article.gender,
-      image: article.image,
+      imagen: article.imagen,
     };
 
     setCart((value) => [...value, prod]);
@@ -81,7 +81,7 @@ const ItemDetailPage = ({ onAdd }) => {
             <div className="col-sm-12 col-md-8 itemPage__detail-image">
               <div>
                 <img
-                  src={product.image}
+                  src={product.imag}
                   className="card-img-top"
                   alt="Imagen de Producto"
                 />
@@ -92,16 +92,16 @@ const ItemDetailPage = ({ onAdd }) => {
               <div>
                 <div className="counter item itemPage__detail-buy-sale">
                   <div className="">
-                    <h3 className="card-title">{product.name}</h3>
+                    <h3 className="card-title">{product.nombre}</h3>
                     <p>{product.description}</p>
-                    <h3>${product.price}</h3>
-                    <h6>Stock: {product.stock}</h6>
+                    <h3>${product.precio}</h3>
+                    <h6>Stock: {product.quantity}</h6>
                   </div>
                   <div className="itemPage__detail-buy-sale-buttons">
                     <ItemCount
                       initial={1}
                       min={0}
-                      max={product.stock}
+                      max={product.quantity}
                       onAdd={onAdd}
                       setQuantity={setQuantity}
                     />

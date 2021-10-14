@@ -8,7 +8,7 @@ import "./index.scss";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
-
+   
   const messageConditional = (
     <div className="card text-center cart-message">
       <div className="card-header">Ops!</div>
