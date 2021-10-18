@@ -81,10 +81,11 @@ const ItemDetailPage = ({ onAdd }) => {
             <div className="col-sm-12 col-md-8 itemPage__detail-image">
               <div>
                 <img
-                  src={product.imag}
+                  src={product.imagen}
                   className="card-img-top"
                   alt="Imagen de Producto"
                 />
+                
               </div>
             </div>
             {/* BUY */}
