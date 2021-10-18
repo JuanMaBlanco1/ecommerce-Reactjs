@@ -9,42 +9,52 @@ import "./index.scss";
 
 const ItemDetailPage = ({ onAdd }) => {
   const { setCart, setQnt } = useContext(CartContext);
-  const [article, setArticle] = useState();
-  const [product, setProduct] = useState();
+  const [article, setArticle] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
+  console.log(product);
   useEffect(() => {
-    let isSubscribed = true;
-    const db = getFirestore();
-    const itemCollection = db.collection("item");
-    const item = itemCollection.doc(id);
+    const getProductos = () => {
+      const db = getFirestore();
+      const itemCollection = db.collection("productos");
 
-    item
-      .get()
-      .then((doc) => {
-        if (!doc.exists) {
-          console.log("Item does not exist!");
-          return;
-        }
-        if (isSubscribed) {
-          console.log("Item found!");
-          setProduct({ id: doc.id, ...doc.data() });
-        }
-      })
-      .catch((error) => {
-        console.log("Error searching items", error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      itemCollection
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.size === 0) {
+            console.log("No results!");
+          }
+          setProducts(
+            querySnapshot.docs.map((doc) => {
+              return { id: doc.id, ...doc.data() };
+            })
+          );
+        })
+        .catch((error) => {
+          console.log("Error searching items", error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    };
 
-    return () => (isSubscribed = false);
+    getProductos();
   }, [id]);
 
   useEffect(() => {
-    setArticle(product);
-  }, [product]);
+    const takeProduct = () => {
+      const product = products.filter((product) => product.id === id);
+      setProduct(product);
+    };
+    takeProduct();
+  }, [products]);
+
+  useEffect(() => {
+    setArticle(products);
+  }, [products]);
 
   const [quantity, setQuantity] = useState(1);
 
@@ -68,6 +78,8 @@ const ItemDetailPage = ({ onAdd }) => {
     setCart((value) => [...value, prod]);
   };
 
+ 
+
   return (
     <div className="itemPage">
       {loading ? (
@@ -80,12 +92,13 @@ const ItemDetailPage = ({ onAdd }) => {
             {/* IMAGE */}
             <div className="col-sm-12 col-md-8 itemPage__detail-image">
               <div>
-                <img
-                  src={product.imagen}
+              <img
+                  src={product[0].imagen}
                   className="card-img-top"
                   alt="Imagen de Producto"
                 />
-                
+              
+              
               </div>
             </div>
             {/* BUY */}
@@ -93,10 +106,10 @@ const ItemDetailPage = ({ onAdd }) => {
               <div>
                 <div className="counter item itemPage__detail-buy-sale">
                   <div className="">
-                    <h3 className="card-title">{product.nombre}</h3>
-                    <p>{product.description}</p>
-                    <h3>${product.precio}</h3>
-                    <h6>Stock: {product.quantity}</h6>
+                    <h3 className="card-title">{product[0].nombre}</h3>
+                    <p>{product[0].description}</p>
+                    <h3>${product[0].precio}</h3>
+                    <h6>Stock: {product[0].quantity}</h6>
                   </div>
                   <div className="itemPage__detail-buy-sale-buttons">
                     <ItemCount
@@ -121,11 +134,11 @@ const ItemDetailPage = ({ onAdd }) => {
             <div className="col-sm-12 col-md-8 itemPage__detail-description">
               <div className="itemPage__details">
                 <h3>Características:</h3>
-                <h5>Marca: {product.brand}</h5>
-                <h5>Modelo: {product.model}</h5>
-                {product.gender && <h5>Género: {product.gender}</h5>}
+                <h5>Marca: {product[0].brand}</h5>
+                
+                
                 <h3>Descripción:</h3>
-                <h5>{product.description}</h5>
+                <h5>{product[0].description}</h5>
               </div>
             </div>
           </div>
