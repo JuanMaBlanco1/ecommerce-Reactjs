@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import CartContext from "../../contexts/cartContext";
+
 import "./index.scss";
 
 const Table = () => {

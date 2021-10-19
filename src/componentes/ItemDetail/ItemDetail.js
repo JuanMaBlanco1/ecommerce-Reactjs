@@ -53,7 +53,8 @@ const ItemDetail = ({ product }) => {
 
   return (
     <div style={style} className="item-detail">
-      <Item product={product} />
+      <Item 
+      product={product} />
       <ItemCount
         initial={1}
         min={0}
