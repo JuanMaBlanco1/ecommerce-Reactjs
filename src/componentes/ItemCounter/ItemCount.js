@@ -2,18 +2,21 @@ import React, { useState, useEffect } from "react";
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 
+
 import "./index.scss";
 
 const ItemCount = ({ initial, min, max, setQuantity }) => {
   const [counter, setCounter] = React.useState(0);
   console.log(counter)
+
+ 
   const handleSumar = () => {
-    
+    if (counter < 50){ 
     setCounter((prevState) => prevState + 1);
-   
+    }
   };
   const handleRestar = () => {
-    if (counter > 0) { 
+    if (counter > min) { 
     setCounter((prevState) => prevState - 1);  }
     
   }

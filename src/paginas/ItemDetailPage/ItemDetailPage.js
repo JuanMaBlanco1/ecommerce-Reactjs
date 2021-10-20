@@ -63,16 +63,15 @@ const ItemDetailPage = ({ onAdd }) => {
     article.quantity = quantity;
 
     const prod = {
-      id: article.id,
-      nombre: article.nombre,
-      description: article.description,
-      stock: article.stock,
-      precio: article.precio,
-      brand: article.brand,
-      model: article.model,
-      quantity: article.quantity,
-      gender: article.gender,
-      imagen: article.imagen,
+      id: product[0].id,
+      nombre: product[0].nombre,
+      description: product[0].description,
+      stock: product[0].stock,
+      precio: product[0].precio,
+      brand: product[0].brand,
+      model: product[0].model,
+      quantity: product[0].quantity,
+      imagen: product[0].imagen,
     };
 
     setCart((value) => [...value, prod]);
