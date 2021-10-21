@@ -63,7 +63,7 @@ const Form = () => {
 
   const updateDataFirebase = async () => {
     const db = getFirestore();
-    const itemsToUpdate = db.collection("items").where(
+    const itemsToUpdate = db.collection("product").where(
      
       "in",
       cart.map((i) => i.id)
