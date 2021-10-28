@@ -6,7 +6,7 @@ import AddIcon from "@material-ui/icons/Add";
 import "./index.scss";
 
 const ItemCount = ({ initial, min, max, setQuantity }) => {
-  const [counter, setCounter] = React.useState(0);
+  const [counter, setCounter] = React.useState(1);
   console.log(counter)
 
  
@@ -16,7 +16,7 @@ const ItemCount = ({ initial, min, max, setQuantity }) => {
     }
   };
   const handleRestar = () => {
-    if (counter > min) { 
+    if (counter > 1) { 
     setCounter((prevState) => prevState - 1);  }
     
   }
